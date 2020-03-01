@@ -1,4 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python 
+
+
+#https://www.google.com/url?sa=t&source=web&rct=j&url=https://usa.denon.com/us/product/hometheater/receivers/avr3808ci%3Fdocname%3DAVR-3808CISerialProtocol_Ver520a.pdf&ved=2ahUKEwjN-aahj_nnAhWOyKQKHbHlBVQQFjABegQIBRAB&usg=AOvVaw2PeekZevgp-p3uxlmW9o3B
+
 
 import socket
 import sys
@@ -46,6 +50,15 @@ class DenonCommand:
     def NSA(self):
         self.Send("NSA")
         self.Send("NSE")
+
+    def PanelUnlock(self):
+        self.Send("SYPANEL LOCK OFF")
+        
+    def PanelLockFull(self):
+        self.Send("SYPANEL+V LOCK ON")
+
+    def PanelLock(self):
+        self.Send("SYPANEL LOCK ON")
 
 if __name__== "__main__":
     dc = DenonCommand("192.168.1.30");
