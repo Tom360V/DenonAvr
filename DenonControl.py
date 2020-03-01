@@ -63,5 +63,17 @@ class DenonCommand:
 if __name__== "__main__":
     dc = DenonCommand("192.168.1.30");
     #dc.PowerOn()
-    dc.Up()
+    #dc.Up()
     #dc.PowerOff()
+
+    key = ''
+    while 'q' != key:
+        key = input(">>")
+        if 'u' == key:
+            dc.PanelUnlock()
+        elif 'l' == key:
+            dc.PanelLock()
+        elif '9' == key:
+            dc.Down()
+        elif '0' == key:
+            dc.Up()
